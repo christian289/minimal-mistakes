@@ -7,6 +7,7 @@ tag:
   - C#
   - WinForm
   - DevExpress
+  - Skin
   - SkinElement
 ---
 
