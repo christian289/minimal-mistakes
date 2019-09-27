@@ -19,13 +19,13 @@ SkinElement elem = skin[GridSkins.SkinGridEvenRow];
 
 위 코드는 현재 활성화된 DevExpress 스킨을 가져와서 GridView의 짝수행의 배경색을 가져옵니다.
 
-짝수행의 배경색이란,
+**짝수행의 배경색**이란,
 ```C#
 GridView.OptionsView.EnableAppearanceEvenRow = true;
 ```
 GridView.OptionsView.EnableAppearanceEvenRow 프로퍼티를 true로 설정했을 때 GridView의 짝수행에 생기는 색상입니다.
 
-마찬가지로 홀수행도 같은 프로퍼티를 지정할 수 있습니다.
+마찬가지로 **홀수행**도 같은 프로퍼티를 지정할 수 있습니다.
 
 ```C#
 GridView.OptionsView.EnableAppearanceOddRow = true;
