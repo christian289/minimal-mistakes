@@ -10,7 +10,7 @@ tag:
   - SkinElement
 ---
 
-DevExpress에서는 Skin의 요소를 가져올 수 있습니다.
+> DevExpress에서는 Skin의 요소를 가져올 수 있습니다.
 
 ```C#
 Skin skin = GridSkins.GetSkin(DevExpress.LookAndFeel.UserLookAndFeel.Default.ActiveLookAndFeel);
@@ -42,14 +42,14 @@ if 문을 이용해서
 
 ```C#
 private void GridView_RowStyle(object sender, RowStyleEventArgs e)
+{
+  if (GridView.GetRowCellValue(e.RowHandle, "컬럼명 또는 컬럼 객체명"))
   {
-    if (GridView.GetRowCellValue(e.RowHandle, "컬럼명 또는 컬럼 객체명"))
-    {
-        SkinElement elem = GridSkins.GetSkin(DevExpress.LookAndFeel.UserLookAndFeel.Default.ActiveLookAndFeel)[GridSkins.SkinGridEvenRow];
-        e.Appearance.BackColor = elem.Color.BackColor;
-        e.HighPriority = true;
-    }
+      SkinElement elem = GridSkins.GetSkin(DevExpress.LookAndFeel.UserLookAndFeel.Default.ActiveLookAndFeel)[GridSkins.SkinGridEvenRow];
+      e.Appearance.BackColor = elem.Color.BackColor;
+      e.HighPriority = true;
   }
+}
 ```
 
 위와 같이 코딩하시면 특정 컬럼의 조건에 따라 해당 Row 색상을 변경하실 수 있습니다.
