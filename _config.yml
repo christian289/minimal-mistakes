@@ -99,9 +99,9 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : "google-gtag" # 구글 어날리틱스 범용사이트 태그(gtag.js) 등록 false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          :
+    tracking_id          : "UA-148895678-1"
     anonymize_ip         : # true, false (default)
 
 
