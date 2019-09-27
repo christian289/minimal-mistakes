@@ -1,6 +1,8 @@
 ---
 title:  "동적으로 객체 List에 추가하기"
 search: true
+toc: true
+toc_sticky: true
 categories: 
   - C#
 tag:

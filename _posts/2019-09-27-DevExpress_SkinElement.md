@@ -1,6 +1,8 @@
 ---
 title:  "DevExpress에서 Skin 요소 가져오기"
 search: true
+toc: true
+toc_sticky: true
 categories: 
   - DevExpress
 tag:
