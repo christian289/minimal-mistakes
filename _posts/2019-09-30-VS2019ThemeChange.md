@@ -16,6 +16,7 @@ tag:
 >Visual Studio 확장 관리에서 **color theme editor for visual studio** 확장을 다운 받아야 합니다.
 
 ![VS_Theme_(1)](/assets/images/VS_Theme_(1).png)
+
 ![VS_Theme_(2)](/assets/images/VS_Theme_(2).png)
 
 >다운로드가 완료되었다면 Visual Studio 를 재시작해야 확장이 적용되므로, 재시작하면서 적용할 테마파일을 다운로드 합니다. 아래 그림에서 다운로드를 클릭하고, 다운로드 받은 파일을 아무데나 압축해제합니다. (**경로는 중요하지 않습니다.**)
