@@ -10,7 +10,7 @@ tag:
   - Microsoft
 ---
 
->본 글은 ![HARD CODE:나잘난 박사의 IT 정글 서바이벌 가이드](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=4129239)에서 인용했습니다.
+>본 글은 [HARD CODE:나잘난 박사의 IT 정글 서바이벌 가이드](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=4129239)에서 인용했습니다.
 
 PM으로서 팀원 일정관리
 1. PM은 위협을 관리하는 사람이다. 내부적인 것이든 외부적인 것이든.
