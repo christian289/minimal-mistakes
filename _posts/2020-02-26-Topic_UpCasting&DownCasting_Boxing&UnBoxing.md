@@ -9,8 +9,8 @@ tag:
   - .NET
 ---
 
-# Boxing 과 UnBoxing
-- 닷넷 카톡방에서 **UpCasting**, **DownCasting** 이슈가 나왔었습니다.
+# UpCasting 과 DownCasting
+닷넷 카톡방에서 **UpCasting**, **DownCasting** 이슈가 나왔었습니다.
 객체지향 프로그래밍에서 상속받는 부모클래스가 있는 클래스가 부모 클래스로 형변환 할 시 **UpCasting**이라고 하고, 반대로 부모클래스를 자식 클래스로 형변환하는 것을 **DownCasting**이라고 합니다.
 예를 들어,
 
@@ -34,6 +34,7 @@ void Main()
 }
 ```
 
+# Boxing 과 UnBoxing
 위와 같은 코드는 ChildClass가 IParent 인터페이스를 상속받는데 IParent에 ChildClass형 인스턴스를 할당했으니 이것은 **UpCasting**이라고 볼 수 있겠습니다.
 여기서 제가 **그럼 Boxing도 UpCasting의 종류입니까?**하고 한분께 여쭤봤습니다.
 답은 No이며 완전히 다른 개념이라고 하셨지만 이해가 잘 되지 않았습니다.
@@ -99,15 +100,18 @@ int i = (int)o1; // 이것은 UnBoxing
 ```
 
 따라서 위 코드로 Boxing을 설명하면,
-Memory의 Stack 영역에 123이라는 Int32 struct 형식의 Value가 생성되며 이 123은 Stack이기 때문에 선언된 함수나 클래스의 스코프가 끝나면 사라집니다.
-123이라는 Value는 object로 형변환 되기 위해 **추상클래스인 ValueType**으로 참조를 거쳐 object형으로 변환되고 123이라는 값이 동적할당이 됩니다.
+
+1. Memory의 Stack 영역에 123이라는 Int32 struct 형식의 Value가 생성되며 이 123은 Stack이기 때문에 선언된 함수나 클래스의 스코프가 끝나면 사라집니다.
+2. 123이라는 Value는 object로 형변환 되기 위해 **추상클래스인 ValueType**으로 참조를 거쳐 object형으로 변환되고 123이라는 값이 동적할당이 됩니다.
+
 위와 같은 **Stack 영역 메모리의 값을 Heap 영역 메모리로 할당해주는 것을 Boxing** 이라고 합니다.
 반대로 **Heap 영역 메모리에서 Stack 영역 메모리로 할당되는 것을 UnBoxing**이라고 합니다.
+
 따라서 사용자가 정의한 참조형 클래스의 객체가 object로 변환되는 것은 Boxing이라고 하지 않습니다. 굳이 말하면 UpCasting 이겠죠.
 
 이상으로 MSDN 링크를 남기고 마치겠습니다.
 
-object 정의: [System.Object](https://docs.microsoft.com/ko-kr/dotnet/api/system.object?view=netframework-4.8)
-ValueType 정의: [System.ValueType](https://docs.microsoft.com/ko-kr/dotnet/api/system.valuetype?view=netframework-4.8)
-Boxing & UnBoxing 정의: [Boxing](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/types/boxing-and-unboxing)
+- object 정의: [System.Object](https://docs.microsoft.com/ko-kr/dotnet/api/system.object?view=netframework-4.8)
+- ValueType 정의: [System.ValueType](https://docs.microsoft.com/ko-kr/dotnet/api/system.valuetype?view=netframework-4.8)
+- Boxing & UnBoxing 정의: [Boxing](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/types/boxing-and-unboxing)
 
