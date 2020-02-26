@@ -54,14 +54,16 @@ object o2 = new 사용자정의클래스(); // 이것은 Boxing??
 **Boxing&UnBoxing과 UpCasting&DownCasting은 완전히 다른 내용입니다.**
 
 그 답은 [MSDN](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/types/boxing-and-unboxing)에 잘 나와있습니다.
-MSDN을 보면, 가장 첫 문장에 Boxing에 대하여, **Boxing is the process of converting a value type to the type object or to any interface type implemented by this value type.** 라고 합니다.
+MSDN을 보면, 가장 첫 문장에 Boxing에 대하여 아래와 같이 써있습니다.
+
+>Boxing is the process of converting a value type to the type object or to any interface type implemented by this value type.
 
 C#에는 C에서 배웠던 것처럼, Value Type이 있고, Reference Type이 있습니다.
 Value Type은 값 형식으로 struct로 정의되며, Reference Type은 참조 형식으로 class로 정의됩니다.
 우리가 흔히 사용하는 예약어 변수인 **int는 사실 [Int32](https://docs.microsoft.com/ko-kr/dotnet/api/system.int32?view=netframework-4.8)라는 구조체**입니다.
 C#의 자료형은 [MSDN](https://docs.microsoft.com/ko-kr/dotnet/csharp/language-reference/builtin-types/integral-numeric-types)에서 역시 자세히 확인하실 수 있습니다.
 
-![CSharp_struct1]](/assets/images/UpCasting&DownCasting_Boxing&UnBoxing(1).PNG)
+![CSharp_struct1](/assets/images/UpCasting&DownCasting_Boxing&UnBoxing(1).PNG)
 
 우리가 사실 예약어로 막연하게 사용중이던 기본 형들이 사실 모두 **구조체**였던 것입니다.
 여기서 발생하는 의문은...**구조체는 클래스가 아니기 때문에 상속이 불가능**합니다.
@@ -75,7 +77,7 @@ int i = (int)o1; // 이것은 UnBoxing
 
 어떻게 된 것일까요? 여기서 다시 한 번 MSDN을 자세히 살펴볼 필요가 있습니다.
 
-![CSharp_struct2]](/assets/images/UpCasting&DownCasting_Boxing&UnBoxing(2).PNG)
+![CSharp_struct2](/assets/images/UpCasting&DownCasting_Boxing&UnBoxing(2).PNG)
 
 ...? 구조체들은 상속이 불가능한데, 우리가 사용하는 int나 double 같은 기본형의 구조체들이 모두 ValueType이라는 클래스를 **상속**받고 있습니다.
 
