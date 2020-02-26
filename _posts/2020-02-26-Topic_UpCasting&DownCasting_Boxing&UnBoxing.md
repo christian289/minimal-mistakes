@@ -1,5 +1,5 @@
 ---
-title:  "[흔하게 사용하지만 잘 모르는 것들] UpCasting과 DownCasting // Boxing과 UnBoxing"
+title:  "[알쓸신잡 코딩]] UpCasting과 DownCasting // Boxing과 UnBoxing"
 search: true
 toc: true
 toc_sticky: true
