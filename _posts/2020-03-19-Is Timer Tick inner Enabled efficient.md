@@ -19,7 +19,7 @@ tag:
 # Cargo Cult는 무엇인가?
 먼저, [위키피디아 링크](https://en.wikipedia.org/wiki/Cargo_cult_programming)를 참조한다.
 영어는 나도 잘 모르지만 대충 번역기 돌려보면, 프로그래머가 특정 버그에 대하여 해결한 방법을 본인도 완벽히 이해하지 못한채 사용하는 것이라고 한다.
-나는 이 단어를 [커리어 스킬](https://play.google.com/store/books/details/%EC%BB%A4%EB%A6%AC%EC%96%B4%EC%8A%A4%ED%82%AC_%EC%99%84%EB%B2%BD%ED%95%9C_%EA%B0%9C%EB%B0%9C%EC%9E%90_%EC%9D%B8%EC%83%9D_%EB%A1%9C%EB%93%9C%EB%A7%B5?id=nZWWDwAAQBAJ&hl=en_US) 이라는 책에서 처음 봤는데 정확히 기억은 나지 않지만, 쉽게 말해 맹목적 프로그래밍이라고 할 수 있겠다.
+나는 이 단어를 [커리어 스킬](https://www.amazon.com/Complete-Software-Developers-Career-Guide-ebook/dp/B073X6GNJ1) 이라는 책에서 처음 봤는데 정확히 기억은 나지 않지만, 쉽게 말해 맹목적 프로그래밍이라고 할 수 있겠다.
 잘 모르면서 경험에 의해서 이렇게 되었으니 다음에도 똑같이하면 또 잘 될거라는 맹목적 믿음이다.
 
 # System.Windows.Forms.Timer의 Cargo Cult Development

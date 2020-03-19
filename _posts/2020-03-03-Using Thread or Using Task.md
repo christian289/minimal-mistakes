@@ -49,7 +49,7 @@ Thread 객체를 우리가 만들어서 사용하게 되면 Thread를 Abort시�
 ## 나는 Thread 객체를 직접 사용하는 편이다.
 그렇다면 Thread를 직접만들어서 사용하는 것은 자원면에서 무조건 나쁜것이냐? 그건 아닙니다.
 ThreadPool은 기본 크기를 갖고 있기때문에 만약 그보다 동시에 많은 Thread를 호출하면 ThreadPool이 Thread를 자동으로 생성합니다.
-그러면서 [overhead](https://ko.wikipedia.org/wiki/%EC%98%A4%EB%B2%84%ED%97%A4%EB%93%9C)가 발생하게됩니다. 
+그러면서 [overhead](https://en.wikipedia.org/wiki/Overhead)가 발생하게됩니다. 
 Overhead가 발생하면 Thread를 할당해서 처리하는 것보다 느려지게 됩니다. 
 우리가 ThreadPool을 초과해서 Thread를 여러개 사용할 일은 사실 잘 없습니다.
 메소드들을 Task로 처리한다고 해도 금방 끝나기 때문인데요.
