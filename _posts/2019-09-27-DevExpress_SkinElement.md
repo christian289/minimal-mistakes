@@ -6,7 +6,7 @@ toc_sticky: true
 categories: 
   - DevExpress
 tag:
-  - C#
+  - CSharp
   - WinForm
   - DevExpress
   - Skin

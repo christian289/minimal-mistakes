@@ -4,9 +4,9 @@ search: true
 toc: true
 toc_sticky: true
 categories: 
-  - C#
+  - CSharp
 tag:
-  - C#
+  - CSharp
   - WPF
   - MVVM
 ---

@@ -4,7 +4,7 @@ search: true
 toc: true
 toc_sticky: true
 categories: 
-  - C#
+  - CSharp
   - Thread
   - Task
   - Thread Pool
