@@ -7,7 +7,7 @@ categories:
   - CSharp
   - Thread
   - Task
-  - Thread Pool
+  - ThreadPool
 tag:
   - .NET
 ---

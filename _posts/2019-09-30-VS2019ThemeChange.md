@@ -4,7 +4,7 @@ search: true
 toc: true
 toc_sticky: true
 categories: 
-  - Visual Studio 2019
+  - VisualStudio
 tag:
   - Visual Studio 2019
   - Theme
