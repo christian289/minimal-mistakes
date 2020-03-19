@@ -1,5 +1,5 @@
 ---
-title:  "[알쓸신잡 코딩] Window.Forms.Timer의 Tick에서 Enabled 제어는 의미가 있을까?"
+title:  "[알쓸신잡 코딩] Windows.Forms.Timer의 Tick에서 Enabled 제어는 의미가 있을까?"
 search: true
 toc: true
 toc_sticky: true
