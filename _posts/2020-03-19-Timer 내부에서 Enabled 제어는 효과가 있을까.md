@@ -215,6 +215,23 @@ Winform Timer에 대해 알아보다가 다른 Timer까지 조사했지만, 유�
 
 뭐...위와 같은 이유가 아니더라도, MSDN의 Winform Timer 예제가 Tick에서 Enabled를 제어하고 있지 않는 것만으로도 유추 가능할 것 같다...
 
+# 여담
+Winform이나 WPF에서 Invoke 처리할 때 
+
+```cs
+Invoke(new MethodInvoker(delegate() { /*처리할 내용*/ })); // Winform
+Dispatcher.Invoke(new InvokeDel(delegate { /*처리할 내용*/ })); // WPF
+```
+
+일하면서 이런 것도 들어봤는데...
+위의 기능을 사용하면서 delegate 사용할 줄 아냐는 말을 들었다.
+저걸 사용할 줄 아냐고 물을 땐 delegate가 아니라 [SynchronizationContext](https://docs.microsoft.com/ko-kr/dotnet/api/system.threading.synchronizationcontext?view=netframework-4.8) 가 뭔지 아냐고 물어봐야맞는데...
+
+뭔지도 잘 모르고 개발하는 사람들이 정말 많은 것 같다.
+new MethodInvoker(delegate() {}) 이것과, new InvokeDel(delegate {}) 이것은 붙어다니는 친구는 맞지만, Invoke 함수의 정의를 보면
+Delegate 클래스를 메소드 파라미터로 받고 있다. 별건아니고 delegate만 인자로 받는 다는 것인데...
+그럼 delegate안쓰고 Invoke 처리할 땐 뭐라고 물어볼건지...Invoke랑 delegate랑 같은 기능인 줄 알고 있다니 뭔가 우습다.
+
 **따라서 Winform Timer의 작업이 무겁다고 해서 '예기치 못한 오류로 인한 동기화가 우려'되어 Tick에서 Enabled을 제어하는 것은 아무 의미가 없다.**
 
 무거운 작업이라면 Background Thread로 작업하고, 그게 UI 에 반영해야한다면, Worker Thread에서 Invoke를 사용하는게 맞다고 판단한다.
