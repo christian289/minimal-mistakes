@@ -215,6 +215,13 @@ Winform Timer에 대해 알아보다가 다른 Timer까지 조사했지만, 유�
 
 뭐...위와 같은 이유가 아니더라도, MSDN의 Winform Timer 예제가 Tick에서 Enabled를 제어하고 있지 않는 것만으로도 유추 가능할 것 같다...
 
+**따라서 Winform Timer의 작업이 무겁다고 해서 '예기치 못한 오류로 인한 동기화가 우려'되어 Tick에서 Enabled을 제어하는 것은 아무 의미가 없다.**
+
+무거운 작업이라면 Background Thread로 작업하고, 그게 UI 에 반영해야한다면, Worker Thread에서 Invoke를 사용하는게 맞다고 판단한다.
+아니면 BackgroundWorker 역시 Background로 동작하는 UI 요소니까 이걸 사용해도 좋을 것 같다.
+
+Cargo Cult 개발은 내가 아직 인지하지 못하는 분야에서 나 역시하고 있을 수 있으므로, 언제나 정확한 이론을 동반해야 어디가서 쪽팔리지 않을 것 같다.
+
 # 여담
 Winform이나 WPF에서 Invoke 처리할 때 
 
@@ -231,10 +238,3 @@ Dispatcher.Invoke(new InvokeDel(delegate { /*처리할 내용*/ })); // WPF
 new MethodInvoker(delegate() {}) 이것과, new InvokeDel(delegate {}) 이것은 붙어다니는 친구는 맞지만, Invoke 함수의 정의를 보면
 Delegate 클래스를 메소드 파라미터로 받고 있다. 별건아니고 delegate만 인자로 받는 다는 것인데...
 그럼 delegate안쓰고 Invoke 처리할 땐 뭐라고 물어볼건지...Invoke랑 delegate랑 같은 기능인 줄 알고 있다니 뭔가 우습다.
-
-**따라서 Winform Timer의 작업이 무겁다고 해서 '예기치 못한 오류로 인한 동기화가 우려'되어 Tick에서 Enabled을 제어하는 것은 아무 의미가 없다.**
-
-무거운 작업이라면 Background Thread로 작업하고, 그게 UI 에 반영해야한다면, Worker Thread에서 Invoke를 사용하는게 맞다고 판단한다.
-아니면 BackgroundWorker 역시 Background로 동작하는 UI 요소니까 이걸 사용해도 좋을 것 같다.
-
-Cargo Cult 개발은 내가 아직 인지하지 못하는 분야에서 나 역시하고 있을 수 있으므로, 언제나 정확한 이론을 동반해야 어디가서 쪽팔리지 않을 것 같다.
