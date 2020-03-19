@@ -4,7 +4,7 @@ search: true
 toc: true
 toc_sticky: true
 categories: 
-  - CSharp
+  - .NET
 tag:
   - CSharp
   - Reflection

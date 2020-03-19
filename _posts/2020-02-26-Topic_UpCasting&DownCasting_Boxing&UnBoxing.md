@@ -4,9 +4,9 @@ search: true
 toc: true
 toc_sticky: true
 categories: 
-  - CSharp
-tag:
   - .NET
+tag:
+  - CSharp
 ---
 
 # UpCasting 과 DownCasting

@@ -4,12 +4,12 @@ search: true
 toc: true
 toc_sticky: true
 categories: 
+  - .NET
+tag:
   - CSharp
   - Thread
   - Task
   - ThreadPool
-tag:
-  - .NET
 ---
 
 # 근본적으로는 서로 같다.

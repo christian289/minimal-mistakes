@@ -4,11 +4,11 @@ search: true
 toc: true
 toc_sticky: true
 categories: 
+  - .NET
+tag:
   - CSharp
   - Thread
   - Timer
-tag:
-  - .NET
 ---
 
 # 요약
