@@ -72,7 +72,7 @@ UI Thread의 UI 요소인 Winform Timer를 '혹시모를 오류'를 대비해서
 [예제](https://github.com/christian289/WinformExample/blob/master/WinformTimerTick/Form1.cs)를 실행해보면 알겠지만 무거운 작업에선 Enabled true false를 해도 UI가 Freeze 된다.
 UI Thread가 메세지 루프를 돌려야하는데 그 메세지중 하나인 Tick이 무거운 작업으로 오래 점유되고 있으면 당연히 다음 작업으로 넘어가지 않는다.
 
-## 그럼 Timer랑 Thread는 뭐가 다른데?
+## Timer의 종류와 Timer/Thread 연관
 구글링하면 알겠지만 .NET의 Timer는 여러 종류가 있다.
 C#에서 공통적으로 사용 가능한게 System.Timers.Timer와 System.Threading.Timer 이고,
  Winform에서 System.Windows.Forms.Timer와
