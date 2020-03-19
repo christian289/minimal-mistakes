@@ -14,7 +14,7 @@ tag:
 # 요약
 - Winform Timer의 Tick Event에서 내부에 Enabled을 제어하는 것은 의미가 없다.
 - Timer와 Thread는 비슷한 효과를 내지만 동작은 완전히 다르다.
-- 무심코 할 수 있는 Cargo Cult를 이론을 학습하여 예방하자.
+- 무심코 할 수 있는 Cargo Cult는 정확한 이론으로 예방하자.
 
 # System.Windows.Forms.Timer의 Cargo Cult Development
 
@@ -47,7 +47,7 @@ private void TimerEvent_Tick(object sender, EventArgs e)
 아직 자료가 충분치 않고, 명확하게 설명할 지식이 없어 미루는 중이다.
 대충 메세지 루프에 관한 [예제는 있다.](https://github.com/christian289/WinformExample/tree/master/ApplicationRunOrFormShowDialogTest)
 
-위 예제를 다운르도 받으면, 내가하고자 하는 설명은 거의 있다. 간단하게 위의 예제를 설명하면,
+위 예제를 다운르도 받으면, 내가 하고자 말하고자 하는 내용은 거의 있다. 간단하게 위의 예제를 설명하면,
 Main Thread는 무조건 1개이며, UI Thread는 2개 이상이 될 수 있다는 예제인데, UI Thread란, 운영체제에서 윈도우 메세지를 처리하기 위한 메세지 큐를 갖고있는 Thread 다.
 Spy++로 검사해보면 여러 윈도우 이벤트들이 실시간으로 막 올라오는 것을 관찰할 수 있다. 
 마우스를 움직일 경우 마우스가 움직이고 있는 이벤트, 키보드를 누를 때 키보드가 눌린 이벤트 등 다양하게 관찰할 수 있다.
