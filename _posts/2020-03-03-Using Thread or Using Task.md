@@ -4,7 +4,7 @@ search: true
 toc: true
 toc_sticky: true
 categories: 
-  - .NET
+  - dotnet
 tag:
   - CSharp
   - Thread
