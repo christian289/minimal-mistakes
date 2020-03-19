@@ -287,6 +287,7 @@ defaults:
       type: posts
     values:
       layout: single
+      classes: wide # 포스트 간격 wide
       author_profile: true
       read_time: true
       comments: # true
