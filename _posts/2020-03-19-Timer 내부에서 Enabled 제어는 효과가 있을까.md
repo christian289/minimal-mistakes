@@ -207,7 +207,7 @@ StartTimer를 클릭하면, SafeNativeMethods.SetTimer 이런 메소드를 사�
 
 결국 Winform Timer는 Thread와 관련없는 Windows Meesage 였던 것이다.
 
-## 결론
+# 결론
 Winform Timer에 대해 알아보다가 다른 Timer까지 조사했지만, 유익한 시간이었다.
 메세지 루프에서 WM_TIMER에 해당하는 Callback 함수가 무겁다면, WM_TIMER 다음에 처리해야 할 Windows Message를 처리하지 못해서 UI Freeze 현상이 발생한다.
 거기에 Callback 함수가 끝나면 이어서 Count를 세어, Interval과 일치되면 다시 WM_TIMER의 Callback 함수가 발생하고 처리한다.
