@@ -32,7 +32,7 @@ private void TimerEvent_Tick(object sender, EventArgs e)
 {
   TimerEvent.Enabled = false;
 
-  /// 타이머에서 사용하고자 하는 작업
+  // 타이머에서 사용하고자 하는 작업
 
   TimerEvent.Enabled = true;
 }
@@ -40,8 +40,7 @@ private void TimerEvent_Tick(object sender, EventArgs e)
 
 개발자로 직장 생활을 하면서 4년 8개월 동안 Winform을 가장 많이 다뤘는데 위 방식을 사용하는 사람들이 내게 똑같이 가르쳐주고, 나도 똑같이 했던 내용이다.
 
-> Winform에서 타이머를 사용할 때 작업이 무겁다면,  반복적으로 동작해야하는 Interval에 '어떠한' 문제가 발생할 수 있다. 
-> 따라서 타이머 동기화를 위해 타이머 작업을 시작하기 전, 타이머를 꺼야한다.
+> Winform에서 타이머를 사용할 때 작업이 무겁다면,  반복적으로 동작해야하는 Interval에 '어떠한' 문제가 발생할 수 있다. 따라서 타이머 동기화를 위해 타이머 작업을 시작하기 전, 타이머를 꺼야한다.
 
 결론부터 말하면 위 문장은 Cargo Cult 가 맞으며, 쓸모없는 행위다.
 
