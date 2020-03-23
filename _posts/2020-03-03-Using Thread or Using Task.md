@@ -1,5 +1,5 @@
 ---
-title:  "[알쓸신잡 코딩] Thread를 사용할까? Task를 사용할까?"
+title:  "Thread를 사용할까? Task를 사용할까?"
 search: true
 toc: true
 toc_sticky: true
@@ -18,7 +18,7 @@ tag:
 
 1. 프로그램을 실행한다.
 2. 프로그램이 프로시저로 변하면서 메모리(RAM)에 올라간다.
-3. 윈도우로부터 메세지루프를 할당받는다.
+3. Main Thread에서 현재 운영체제를 참조하여 Message Queue를 생성합니다. (Message Queue는 Main Thread 소유)
 4. CLR로부터 Thread Pool을 할당받는다. (기본사이즈는 CLR의 계산하에 정해집니다.)
 
 이 밖에도 많은 처리가 이뤄지겠지만 주제에 벗어나고 무엇보다 제가 잘 모르므로...

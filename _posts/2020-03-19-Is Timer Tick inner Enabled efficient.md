@@ -1,5 +1,5 @@
 ---
-title:  "[알쓸신잡 코딩] Windows.Forms.Timer의 Tick에서 Enabled 제어는 의미가 있을까?"
+title:  "Windows.Forms.Timer의 Tick에서 Enabled 제어는 의미가 있을까?"
 search: true
 toc: true
 toc_sticky: true
@@ -56,12 +56,12 @@ private void TimerEvent_Tick(object sender, EventArgs e)
 Main Thread는 무조건 1개이며, UI Thread는 2개 이상이 될 수 있다는 예제인데, UI Thread란, 운영체제에서 윈도우 메세지를 처리하기 위한 메세지 큐를 갖고있는 Thread 다.
 Spy++로 검사해보면 여러 윈도우 이벤트들이 실시간으로 막 올라오는 것을 관찰할 수 있다. 
 마우스를 움직일 경우 마우스가 움직이고 있는 이벤트, 키보드를 누를 때 키보드가 눌린 이벤트 등 다양하게 관찰할 수 있다.
-**ShowDialog로 어떤 Form을 열면 기존 UI Thread의 메세지 큐가 일시정지**하고 운영체제로부터 ShowDialog로 Show한 Form의 여러 이벤트를 처리하기 위한 메세지 큐를 **새로 할당**받는다.
+**ShowDialog로 어떤 Form을 열면 기존 Main UI Thread의 메세지 큐가 일시정지**하고 ShowDialog로 Show한 Form의 여러 메세지를 처리하기 위한 메세지 큐를 **Main UI Thread가 새로 만든다**.
 이것은 MSDN에서 공개하고 있는 내용이다. [ShowDialog MSDN 링크](https://docs.microsoft.com/ko-kr/dotnet/framework/winforms/advanced/com-interop-by-displaying-a-windows-form-shadow)
 
 그래서 기존의 메세지 큐가 일시중지했고, 마우스나 키보드들의 이벤트가 새로 할당받은 메세지 큐에서 처리하고 있기 때문에 ShowDialog를 호출한 Parent Form의 UI가 Hang 또는 Freeze 현상이 발생하는 거라고 추측하고 있다. (아직 확인되지 않은 사실이나, 맞는 것으로 보인다.)
 
-일반적으로 UI Thread는 1개다. **Main Thread가 운영체제로부터 메세지 큐(또는 메세지 루프)를 받으면 Main Thread가 UI Thread 기능을 수행**하는 것이다.
+일반적으로 UI Thread는 1개다. **Main Thread가 메세지 큐(또는 메세지 루프)를 만들면 Main Thread가 UI Thread 기능을 수행**하는 것이다.
 그리고 Window 개발에서 중요한 한 가지 원칙은 **UI 요소는 자신을 생성한 Thread에서만 접근이 가능하다** 라는 점이다.
 이게 무슨 뜻이나면,
 
