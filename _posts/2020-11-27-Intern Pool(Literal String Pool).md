@@ -11,6 +11,7 @@ tag:
   - Intern Pool
 ---
 
+# Intern Pool
 .NET Runtime에서는 컴파일하고 빌드를 하면 많은 정보들이 생성된다. 특히 문자열은 메모리 관리차원에서 Intern Pool이라는 곳에 등록되는데, 이곳에 등록되는 문자열은 '리터럴 문자열'만 저장된다.
 
 리터럴 문자열이란, 직접 소스 코드에서 __"Hello World" 처럼 쌍따옴표로 묶어서 코딩한 문자열__ 들이다. 이 문자열들만 골라서 Runtime시 Intern Pool에 등록해놓고, 문자열 객체를 여러개생성하지 않도록 한다. 
@@ -22,6 +23,7 @@ string s3 = "Hello";
 string s4 = "Hello";
 string s5 = "Hello";
 ```
+
 위와 같이 코딩하면 Hello 객체는 런타임에서 5개가 생성되지 않고 모두 참조하는 주소가 Intern Pool을 가리킨다. ReferenceEqual 메서드를 통해 주소 비교를 할 수 있으며, 실행하면 모두 참조 주소가 같다고 나온다.
 
 하지만 런타임에서 생성해낸 똑같은 문자열일 경우 리터럴 문자열 취급을 하지 않고 새로운 객체를 만든 것이기에 다른 주소를 참조한다. 아래의 코드를 보자.
@@ -30,6 +32,7 @@ string s5 = "Hello";
 string s1 = "Hello World";
 string s2 = string.Concat("Hello", " World");
 ```
+
 이 경우 ReferenceEquals(s1, s2)는 false 결과이다. s1의 경우 코딩을 쌍따옴표로 묶은 리터럴 문자열 취급이며, s2 문자열은 새로 문자열을 조합해서 새로운 객체를 리턴했으므로 리터럴 문자열이 아닌 일반적인 런타임 문자열 객체가 된다. 따라서 이 경우에는 Hello World 문자열 객체가 2개가 생긴다.
 
 또한 Intern Pool에 등록되는 리터럴 문자열은 Managed Heap에 할당되지 않으며, 그렇기 때문에 당연히 Garbage Collector의 대상이 아니다. 따라서 프로그램이 끝나는 순간까지 해제되지 않는다.
@@ -54,14 +57,14 @@ public static String Format(String format, params Object[] args) {
     }
     Contract.Ensures(Contract.Result<String>() != null);
     Contract.EndContractBlock();
-            
+
     return FormatHelper(null, format, new ParamsArray(args));
 }
 
 private static String FormatHelper(IFormatProvider provider, String format, ParamsArray args) {
     if (format == null)
         throw new ArgumentNullException("format");
-            
+
         return StringBuilderCache.GetStringAndRelease(
             StringBuilderCache.Acquire(format.Length + args.Length * 8).AppendFormatHelper(provider, format, args));
 }
@@ -99,22 +102,22 @@ internal StringBuilder AppendFormatHelper(IFormatProvider provider, String forma
     }
     Contract.Ensures(Contract.Result<StringBuilder>() != null);
     Contract.EndContractBlock();
- 
+
     int pos = 0;
     int len = format.Length;
     char ch = '\x0';
- 
+
     ICustomFormatter cf = null;
     if (provider != null) {
         cf = (ICustomFormatter)provider.GetFormat(typeof(ICustomFormatter));
     }
- 
+
     while (true) {
         int p = pos;
         int i = pos;
         while (pos < len) {
             ch = format[pos];
- 
+
             pos++;
             if (ch == '}')
             {
@@ -123,7 +126,7 @@ internal StringBuilder AppendFormatHelper(IFormatProvider provider, String forma
                 else
                     FormatError();
             }
- 
+
             if (ch == '{')
             {
                 if (pos < len && format[pos] == '{') // Treat as escape character for {{
@@ -134,10 +137,10 @@ internal StringBuilder AppendFormatHelper(IFormatProvider provider, String forma
                     break;
                 }
             }
- 
+
             Append(ch);
         }
- 
+
         if (pos == len) break;
         pos++;
         if (pos == len || (ch = format[pos]) < '0' || ch > '9') FormatError();
@@ -155,7 +158,7 @@ internal StringBuilder AppendFormatHelper(IFormatProvider provider, String forma
         if (ch == ',') {
             pos++;
             while (pos < len && format[pos] == ' ') pos++;
- 
+
             if (pos == len) FormatError();
             ch = format[pos];
             if (ch == '-') {
@@ -172,7 +175,7 @@ internal StringBuilder AppendFormatHelper(IFormatProvider provider, String forma
                 ch = format[pos];
             } while (ch >= '0' && ch <= '9' && width < 1000000);
         }
- 
+
         while (pos < len && (ch = format[pos]) == ' ') pos++;
         Object arg = args[index];
         StringBuilder fmt = null;
@@ -201,7 +204,7 @@ internal StringBuilder AppendFormatHelper(IFormatProvider provider, String forma
                         break;
                     }
                 }
- 
+
                 if (fmt == null) {
                     fmt = new StringBuilder();
                 }
@@ -218,30 +221,29 @@ internal StringBuilder AppendFormatHelper(IFormatProvider provider, String forma
             }
             s = cf.Format(sFmt, arg, provider);
         }
- 
+
         if (s == null) {
             IFormattable formattableArg = arg as IFormattable;
- 
-#if FEATURE_LEGACYNETCF
+
             if(CompatibilitySwitches.IsAppEarlierThanWindowsPhone8) {
             // TimeSpan does not implement IFormattable in Mango
-            
+
             if(arg is TimeSpan) {
                 formattableArg = null;
                 }
             }
-#endif
+
             if (formattableArg != null) {
                 if (sFmt == null && fmt != null) {
                     sFmt = fmt.ToString();
                 }
- 
+
                 s = formattableArg.ToString(sFmt, provider);
             } else if (arg != null) {
                 s = arg.ToString();
             }
         }
- 
+
         if (s == null) s = String.Empty;
         int pad = width - s.Length;
         if (!leftJustify && pad > 0) Append(' ', pad);
