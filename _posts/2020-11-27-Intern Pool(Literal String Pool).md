@@ -188,14 +188,14 @@ internal StringBuilder AppendFormatHelper(IFormatProvider provider, String forma
                 pos++;
                 if (ch == '{')
                 {
-                    if (pos < len && format[pos] == '{')  // Treat as escape character for {{
+                    if (pos < len && format[pos] == '{')
                         pos++;
                     else
                         FormatError();
                 }
                 else if (ch == '}')
                 {
-                    if (pos < len && format[pos] == '}')  // Treat as escape character for }}
+                    if (pos < len && format[pos] == '}')
                         pos++;
                     else
                     {
@@ -225,7 +225,6 @@ internal StringBuilder AppendFormatHelper(IFormatProvider provider, String forma
             IFormattable formattableArg = arg as IFormattable;
 
             if(CompatibilitySwitches.IsAppEarlierThanWindowsPhone8) {
-            // TimeSpan does not implement IFormattable in Mango
 
             if(arg is TimeSpan) {
                 formattableArg = null;
