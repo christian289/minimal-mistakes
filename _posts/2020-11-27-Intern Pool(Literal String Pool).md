@@ -42,7 +42,7 @@ string.Format에선 쌍따옴표로 묶인 문자열 안에 .NET에서 지원하
 
 __답은 아니다.__
 
-.NET Framework 4.8 Reference Source를 찾아보면 string.Format은 내부적으로 StringBuilder를 사용하고 있으며, 포멧 문자열로 작성된 문자열을 StringBuilder로 작성하여 문자를 하나하나 추가하고 파싱하여 포멧문자열을 만나면 해당 포멧형식으로 바꿔주고 return 할 때 최종적으로 GetStringAndRelease메서드에서 StringBuilder.ToString()을 호출한다.
+[.NET Framework 4.8 Reference Source](https://referencesource.microsoft.com/#mscorlib/system/string.cs,ad9f5b0b214ae8f3)를 찾아보면 string.Format은 내부적으로 StringBuilder를 사용하고 있으며, 포멧 문자열로 작성된 문자열을 StringBuilder로 작성하여 문자를 하나하나 추가하고 파싱하여 포멧문자열을 만나면 해당 포멧형식으로 바꿔주고 return 할 때 최종적으로 GetStringAndRelease메서드에서 StringBuilder.ToString()을 호출한다.
 
 ```cs
 public static String Format(String format, params Object[] args) {
