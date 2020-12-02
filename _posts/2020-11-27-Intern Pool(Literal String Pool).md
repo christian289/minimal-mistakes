@@ -253,3 +253,7 @@ internal StringBuilder AppendFormatHelper(IFormatProvider provider, String forma
 ```
 
 __따라서 Intern Pool과 string.Format 및 string Interpolation은 관계가 없으며 매번 새로운 문자열을 리턴한다.__
+
+# 참고링크
+- http://www.simpleisbest.net/archive/2005/07/12/183.aspx
+- https://dailydotnettips.com/the-string-intern-pool/
