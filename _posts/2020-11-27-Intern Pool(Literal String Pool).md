@@ -117,11 +117,10 @@ internal StringBuilder AppendFormatHelper(IFormatProvider provider, String forma
         int i = pos;
         while (pos < len) {
             ch = format[pos];
-
             pos++;
             if (ch == '}')
             {
-                if (pos < len && format[pos] == '}') // Treat as escape character for }}
+                if (pos < len && format[pos] == '}')
                     pos++;
                 else
                     FormatError();
@@ -129,7 +128,7 @@ internal StringBuilder AppendFormatHelper(IFormatProvider provider, String forma
 
             if (ch == '{')
             {
-                if (pos < len && format[pos] == '{') // Treat as escape character for {{
+                if (pos < len && format[pos] == '{')
                     pos++;
                 else
                 {
