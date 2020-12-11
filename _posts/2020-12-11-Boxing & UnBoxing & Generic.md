@@ -16,17 +16,21 @@ tag:
 # 잘못된 개념
 - 흔히들 Boxing은 'object로 형변환하는 작업'으로 착각하고 있다. 마찬가지로 UnBoxing 또한 'object에서 다른 타입으로 형변환 하는 작업'으로 착각하고 있다.
 - 굳이 object가 아니더라도 아래와 같은 코드도 ValueType이 Reference Type으로 변환되므로 Boxing이다.
+
 ```cs
 int a = 123;
 string b = a.ToString();
 ```
+
 ```cs
 ArrayList collection = new ArrayList();
-for(int i = 99; i > 0; i--)
+
+for (int i = 99; i > 0; i--)
 {
-  collection.Add(i);
+    collection.Add(i);
 }
 ```
+
 - 첫번째 예제코드는 object로 형변환 하지 않았어도 Boxing이다.
 - System.ValueType은 Thread Stack에 할당될 수도 있고, Managed Heap에 할당될 수도 있는 타입이다. Thread Stack에만 할당된다는 편견은 버려라.
 
@@ -51,14 +55,17 @@ for(int i = 99; i > 0; i--)
 # .NET의 Generic
 - 컬랙션 객체에 원래 ValueType의 값을 저장하고 싶다면 위의 예제처럼 ArrayList를 통해 Boxing이 되는 형태로 사용했지만, .NET Framework 2.0에서 Generic이 도입되면서 Boxing을 예방할 수 있게되었다.
 - Generic은 런타임 시점에서 인스턴스를 형성할 때 Generic Type으로 지정되어 인스턴스를 할당하기 때문에 Boxing이 아닌 처음부터 Reference type의 ValueType을 할당할 수 있다. 아래와 같은 구조라고 보면 된다.
+
 ```cs
 class Sample
 {
-    int a { get; set;}
+    int a { get; set; }
 }
 ```
+
 - 위의 int는 ValueType이지만 Class의 Property로 정의 되었으므로 Reference Type이다. Generic이 위와 같이 Reference Type의 ValueType을 사용할 수 있게한다.
 - List<int>는 위와 같이 Reference Type으로 동작하므로 Boxing이 없고, 메소드 같은 경우 아래 코드를 보면 generic이 int형태로만 동작하기 때문에 boxing이 없다. 따라서 Boxing이 예방된다.
+
 ```cs
 public T Sum<T>(T t1, T t2) where T : struct
 {
@@ -75,7 +82,7 @@ Console.WriteLine(result); // 7
 - https://www.sysnet.pe.kr/2/0/11565
 
 # 참고자료
-- https://stackoverflow.com/questions/3815227/understanding-clr-object-size-between-32-bit-vs-64-bit
-- https://docs.microsoft.com/en-us/archive/msdn-magazine/2005/may/net-framework-internals-how-the-clr-creates-runtime-objects#S7
-- https://www.codingblocks.net/programming/boxing-and-unboxing-7-deadly-sins/
-- https://docs.microsoft.com/ko-kr/dotnet/standard/generics/
+- [https://stackoverflow.com/questions/3815227/understanding-clr-object-size-between-32-bit-vs-64-bit](https://stackoverflow.com/questions/3815227/understanding-clr-object-size-between-32-bit-vs-64-bit)
+- [https://docs.microsoft.com/en-us/archive/msdn-magazine/2005/may/net-framework-internals-how-the-clr-creates-runtime-objects#S7](https://docs.microsoft.com/en-us/archive/msdn-magazine/2005/may/net-framework-internals-how-the-clr-creates-runtime-objects#S7)
+- [https://www.codingblocks.net/programming/boxing-and-unboxing-7-deadly-sins/](https://www.codingblocks.net/programming/boxing-and-unboxing-7-deadly-sins/)
+- [https://docs.microsoft.com/ko-kr/dotnet/standard/generics/](https://docs.microsoft.com/ko-kr/dotnet/standard/generics/)
