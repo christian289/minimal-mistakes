@@ -90,7 +90,7 @@ int i = (int)o1; // 이것은 UnBoxing
 >4.1.3 Struct types
 >A struct type is a value type that can declare constants, fields, methods, properties, indexers, operators, instance constructors, static constructors, and nested types.
 
-설명을 보니 이 ValueType은 사용자가 직접 사용할 수는 없는 암시적 클래스이며, .NET의 **모든 값 형식이 이 ValueType을 상속**받는다고 합니다.
+설명을 보니 이 ValueType은 사용자가 직접 사용할 수는 없는 추상클래스이며, .NET의 **모든 값 형식이 이 ValueType을 상속**받는다고 합니다.
 그러므로 우리가 사용하는 Int32나 Int64 등등의 값 형식은 ValueType을 받아 상속되어 정의된 구조체입니다.
 사용자가 정의하는 구조체 역시 System.Object를 상속받는 System.ValueType을 **이미 상속 받고 있습니다.**
 
