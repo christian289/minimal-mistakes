@@ -54,7 +54,7 @@ for (int i = 99; i > 0; i--)
 
 # .NET의 Generic
 - 컬랙션 객체에 원래 ValueType의 값을 저장하고 싶다면 위의 예제처럼 ArrayList를 통해 Boxing이 되는 형태로 사용했지만, .NET Framework 2.0에서 Generic이 도입되면서 Boxing을 예방할 수 있게되었다.
-- Generic은 런타임 시점에서 인스턴스를 형성할 때 Generic Type으로 지정되어 인스턴스를 할당하기 때문에 Boxing이 아닌 처음부터 Reference type의 ValueType을 할당할 수 있다. 아래와 같은 구조라고 보면 된다.
+- **Generic은 런타임 시점에서 인스턴스를 형성할 때 Generic Type으로 지정되어 인스턴스를 할당하기 때문에** Boxing이 아닌 처음부터 Reference type의 ValueType을 할당할 수 있다. 아래와 같은 구조라고 보면 된다.
 
 ```cs
 class Sample
@@ -78,8 +78,8 @@ Console.WriteLine(result); // 7
 
 # Dictionary
 - Dictionary는 Generic을 사용하면서 Key-Value 형태로 편하게 사용할 수 있는 클래스다. 객체지향 프로그래밍은 값에 대한 의미가 중요하므로, Key로 Enum을 사용한다면 명시적인 Key로서 구분이 용이할 것이다. 일반적인 Generic Class에서는 Enum을 사용해도 Boxing이 발생하지 않는다. 하지만 __Dictionary에서는 Key로 Enum 타입을 지정할 경우 특성상 Key Compare를 해야하기 때문에 내부적으로 Equals 메서드가 사용된다. 이 메서드는 object 형을 파라미터로 받고 있으므로 Enum이 object로 Boxing 된다.__ 따라서 Enum을 아래의 방법으로 Managed Heap 영역에 넣어두고 사용해야 Boxing이 발생하지 않는다.
-- https://www.slideshare.net/devcatpublications/enum-boxing-enum-ndc2019
-- https://www.sysnet.pe.kr/2/0/11565
+- [https://www.slideshare.net/devcatpublications/enum-boxing-enum-ndc2019](https://www.slideshare.net/devcatpublications/enum-boxing-enum-ndc2019)
+- [https://www.sysnet.pe.kr/2/0/11565](https://www.sysnet.pe.kr/2/0/11565)
 
 # 참고자료
 - [https://stackoverflow.com/questions/3815227/understanding-clr-object-size-between-32-bit-vs-64-bit](https://stackoverflow.com/questions/3815227/understanding-clr-object-size-between-32-bit-vs-64-bit)
