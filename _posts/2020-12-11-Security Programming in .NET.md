@@ -43,7 +43,7 @@ make 파일 에서이 플래그가 비활성화되어 있음을 발견했기 때
 # Editbin.EXE는 어디에 있나요?
 ## 설치방법
 - **Visual Studio Installer -> 개별 구성 요소 -> MSVC v142 - VS 2019 C++-x64/x86 빌드 도구(v14.28)** 체크 후 수정
-![image.png](/.attachments/image-cd67c24e-9aae-49e6-95dc-b9277c634be3.png)
+![Security Programming in dotnet](/assets/images/Security Programming in dotnet.png)
 - 현재(2020년 12월 11일)기준으로 작성된 것이므로 새로운 버전이 있다면 상위 버전을 설치해도 됨.
 - 위 링크를 따라 설치했다면, **C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.28.29333\bin\Hostx64\x64** 경로에 editbin.exe가 설치된다.
 (물론 VS2019외에 다른 IDE를 사용한다면 위의 경로와 약간 다를 수 있다.)
