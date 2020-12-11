@@ -35,6 +35,7 @@ public Thread (System.Threading.ThreadStart start, int maxStackSize);
 - **dumpbin /HEADERS <어셈블리명>.<확장자명>** 을 입력하면 **OPTIONAL HEADER VALUES** 항목에서 기본 Stack Size를 확인할 수 있다.
 ![How to change main thread stack size in dotnet (3)](/assets/images/How to change main thread stack size in dotnet (3).png)
 ![How to change main thread stack size in dotnet (4)](/assets/images/How to change main thread stack size in dotnet (4).png)
+
 - **editbin /STACK:4194304 <어셈블리명>.<확장자명>**를 입력하여 어셈블리의 Stack Size를 변경하고 다시 dumpbin 명령어를 입력하면, 아래와 같이 바뀐다. 4194304는 4 * 1024 * 1024로 4MB의 Stack Size다.
 ![How to change main thread stack size in dotnet (5)](/assets/images/How to change main thread stack size in dotnet (5).png)
 ![How to change main thread stack size in dotnet (6)](/assets/images/How to change main thread stack size in dotnet (6).png)
