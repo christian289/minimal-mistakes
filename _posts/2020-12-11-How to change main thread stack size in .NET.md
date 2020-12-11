@@ -33,13 +33,17 @@ public Thread (System.Threading.ThreadStart start, int maxStackSize);
 - Editbin.exe와 dumpbin.exe는 설치된 경로를 타고들어가서 실행하면 아무 인자도 넘어가지 않은 채로 실행되기 때문에 켜졌다가 바로 꺼진다.
 - 개발자 프롬프트에서 cd 명령어를 이용하여 빌드를 완료한 .NET 어셈블리 경로까지 찾아들어간다. (bin/Debug or bin/Release .NET Core 이후 플랫폼에서는 해당 플랫폼까지.)
 - **dumpbin /HEADERS <어셈블리명>.<확장자명>** 을 입력하면 **OPTIONAL HEADER VALUES** 항목에서 기본 Stack Size를 확인할 수 있다.
+
 ![How to change main thread stack size in dotnet (3)](/assets/images/How to change main thread stack size in dotnet (3).png)
+
 ![How to change main thread stack size in dotnet (4)](/assets/images/How to change main thread stack size in dotnet (4).png)
 
 - **editbin /STACK:4194304 <어셈블리명>.<확장자명>**를 입력하여 어셈블리의 Stack Size를 변경하고 다시 dumpbin 명령어를 입력하면, 아래와 같이 바뀐다. 4194304는 4 * 1024 * 1024로 4MB의 Stack Size다.
+
 ![How to change main thread stack size in dotnet (5)](/assets/images/How to change main thread stack size in dotnet (5).png)
+
 ![How to change main thread stack size in dotnet (6)](/assets/images/How to change main thread stack size in dotnet (6).png)
 
 # 참고자료
-- https://informatics.perkinelmer.com/Support/KnowledgeBase/details/Default?TechNote=11148
-- https://www.sysnet.pe.kr/2/0/1441
+- [https://informatics.perkinelmer.com/Support/KnowledgeBase/details/Default?TechNote=11148](https://informatics.perkinelmer.com/Support/KnowledgeBase/details/Default?TechNote=11148)
+- [https://www.sysnet.pe.kr/2/0/1441](https://www.sysnet.pe.kr/2/0/1441)

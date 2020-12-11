@@ -49,7 +49,7 @@ make 파일 에서이 플래그가 비활성화되어 있음을 발견했기 때
 (물론 VS2019외에 다른 IDE를 사용한다면 위의 경로와 약간 다를 수 있다.)
 
 # 자료원본
-- https://www.michalkomorowski.com/2015/04/what-ive-learned-about-net-from.html
+- [https://www.michalkomorowski.com/2015/04/what-ive-learned-about-net-from.html](https://www.michalkomorowski.com/2015/04/what-ive-learned-about-net-from.html)
 
 # 참고자료
-- https://stackoverflow.com/questions/57207503/dumpbin-exe-editbin-exe-package-needed-in-visual-studio-2019
+- [https://stackoverflow.com/questions/57207503/dumpbin-exe-editbin-exe-package-needed-in-visual-studio-2019](https://stackoverflow.com/questions/57207503/dumpbin-exe-editbin-exe-package-needed-in-visual-studio-2019)
