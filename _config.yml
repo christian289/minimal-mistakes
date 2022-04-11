@@ -10,8 +10,8 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-# theme                  : "minimal-mistakes-jekyll"
-# remote_theme           : "mmistakes/minimal-mistakes"
+theme                  : "minimal-mistakes-jekyll"
+remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "neon" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
@@ -106,7 +106,7 @@ author:
   avatar           : "/assets/images/Logo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "오늘은 어제 죽은 이가 간절히 원하던 것이다."
   location         : "Republic of Korea"
-  email            : "greatz613@gmail.com"
+  email            : # "greatz613@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
