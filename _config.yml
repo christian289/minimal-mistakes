@@ -106,11 +106,11 @@ author:
   avatar           : "/assets/images/Logo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "오늘은 어제 죽은 이가 간절히 원하던 것이다."
   location         : "Republic of Korea"
-  email            : "greatz613@gmail.com"
+  #email            : "greatz613@gmail.com"
   links:
-    #- label: "Email"
-    #  icon: "fas fa-fw fa-envelope-square"
-    #  url: mailto:greatz613@gmail.com
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: mailto:greatz613@gmail.com
     #- label: "Website"
     #  icon: "fas fa-fw fa-link"
     #  url: "https://your-website.com"
