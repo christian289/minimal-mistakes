@@ -3,7 +3,6 @@ title:  "다시 시작"
 search: true
 toc: true
 toc_sticky: true
-toc_label: "주제"
 categories: 
   - ADKF
 tag:
