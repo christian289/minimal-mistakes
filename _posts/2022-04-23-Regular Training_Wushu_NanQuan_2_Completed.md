@@ -1,5 +1,5 @@
 ---
-title:  "2단 남권 마무리, 2단 남권으로 체력단련"
+title:  "2단 남권 마무리 2단 남권으로 체력단련"
 search: true
 toc: true
 toc_sticky: true
