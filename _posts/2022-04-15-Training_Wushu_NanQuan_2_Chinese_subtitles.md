@@ -9,6 +9,7 @@ tag:
   - Kung Fu
   - Chinese Boxing
   - NanQuan
+  - Regular Training
 ---
 
 수련자 단체로 2단 남권을 수련하기로 했다.
