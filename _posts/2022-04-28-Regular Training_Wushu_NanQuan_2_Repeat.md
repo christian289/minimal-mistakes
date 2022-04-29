@@ -57,7 +57,7 @@ tag:
 앞서 등퇴를 언급했지만 **후소퇴**라는 발목을 공격하는 위협적인 발기술 또한 있고, 과거의 MMA에는 자주 유행하는 기술이었다고 한다.
 내가 정규수련때 수련한 발차기는 위의 2가지는 아니었지만 역시 무릎을 공격하는 퇴법도 있었다.
 
-![발차기](/assets/images/Regular Training_Wushu_NanQuan_2_Repeat(1))
+![발차기](/assets/images/Regular Training_Wushu_NanQuan_2_Repeat(1).jpg)
 
 # 기초 체력훈련
 
@@ -99,7 +99,7 @@ tag:
 이거이거 다음 주 수련이 또 기대된다.
 이 감각훈련이 더 쌓이면 나중에 퇴법도 넣고, 더욱 실전처럼도 할 수 있을테니 뭐든 스텝 바이 스텝. 조급해하지말고 꾸준히 하자.
 
-![감각훈련1](/assets/images/Regular Training_Wushu_NanQuan_2_Repeat(2))
-![감각훈련2](/assets/images/Regular Training_Wushu_NanQuan_2_Repeat(3))
+![감각훈련1](/assets/images/Regular Training_Wushu_NanQuan_2_Repeat(2).jpg)
+![감각훈련2](/assets/images/Regular Training_Wushu_NanQuan_2_Repeat(3).jpg)
 
 이상 끝!
