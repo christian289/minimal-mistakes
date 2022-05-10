@@ -1,5 +1,5 @@
 ---
-title:  "깨달음(1) 아는 것까지만 진짜다"
+title:  "팔극권 깨달음(1) 아는 것까지만 진짜다"
 search: true
 toc: true
 toc_sticky: true
@@ -11,8 +11,6 @@ tag:
   - NanQuan
   - Regular Training
 ---
-
-# 늦은 수련
 
 지난 수련 때 경험한대로 현 직장에서 무관까지는 약 1시간이 소요된다.
 오늘은 7시 45분 경 퇴근했고 무관에 거의 9시가 다되서 도착했다.
